@@ -38,6 +38,15 @@ const _ = {
     has (object, key) {
         const hasValue = object[key] !== undefined;
         return hasValue;
+    },
+    // inverts objects with its key and removed duplicate data
+    invert (object) {
+        let invertedObject = {};
+        for (const key in object) {
+            const originalValue = object[key];
+            invertedObject[originalValue] = key;
+        };
+        return invertedObject;
     }
 };
 
