@@ -19,9 +19,20 @@ const _ = {
         const isInRange = (start <= number && number < end);
         return isInRange;
     },
+    // takes a string as argument and returns the string as an array of words
     words (string) {
         const words = string.split(' ');
         return words;
+    },
+    // adds padding to the start and end of a string if the desired length is longer than the string
+    pad (string, length) {
+        if (length <= string.length) {
+            return string;
+        };
+        const startPaddingLength = Math.floor((length - string.length) / 2);
+        const endPaddingLength = length - string.length - startPaddingLength;
+        const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength);
+        return paddedString;
     },
 };
 
