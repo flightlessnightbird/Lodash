@@ -59,6 +59,14 @@ const _ = {
         };
         return undefined;
     },
+    // drops n amount of elements from the start of an array. if n is undefined it will drop 1 element
+    drop (array, n) {
+        if (typeof n === 'undefined') {
+            n = 1;
+        };
+        const droppedArray = array.slice(n);
+        return droppedArray;
+    },
 };
 
 
