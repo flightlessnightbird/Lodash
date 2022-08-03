@@ -47,7 +47,18 @@ const _ = {
             invertedObject[originalValue] = key;
         };
         return invertedObject;
-    }
+    },
+    // itterates through an object to find the predicate value and returns the first instance of that value, or undefined if it isn't in the object
+    findKey (object, predicate) {
+        for (const key in object) {
+            const value = object[key];
+            const predicateReturnValue = predicate(value);
+            if (predicateReturnValue === true) {
+                return key;
+            };
+        };
+        return undefined;
+    },
 };
 
 
