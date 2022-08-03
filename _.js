@@ -34,6 +34,11 @@ const _ = {
         const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength);
         return paddedString;
     },
+    // checks to see if an object contains a key value
+    has (object, key) {
+        const hasValue = object[key] !== undefined;
+        return hasValue;
+    }
 };
 
 
