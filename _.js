@@ -67,6 +67,14 @@ const _ = {
         const droppedArray = array.slice(n);
         return droppedArray;
     },
+    // takes in an array, and iterates through and drops all the elements until it reaches the defined element then it returns the rest of the array in a new array
+    dropWhile (array, predicate) {
+        const dropNumber = array.findIndex((element, index) => {
+            return !predicate(element, index, array);
+        });
+        const droppedArray = this.drop(array, dropNumber);
+        return droppedArray;
+    },
 };
 
 
